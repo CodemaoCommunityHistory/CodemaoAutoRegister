@@ -40,6 +40,14 @@ python3 SendCaptca.py -w <间隔时间(单位秒)> -ru <随机UA(True/False)>
 python3 SendOneCaptca.py -p <手机号码>
 ```
 
+## 在云端运行
+
+因为一些原因我们必须隐藏自己的IP,云端是个不错的选择
+
+在座的各位想必都玩过AI画图,所以对笔记本这东西(.ipynb)肯定很熟悉,直接拖入到Jupyter notebook里就可以使用了,有网络条件(指出国)的可以用Google Colab,在这里我就不多说了
+
+(https://colab.research.google.com/github/Wangs-official/CodemaoAutoRegister/blob/main/CodemaoAutoRegister.ipynb)[Open In Colab]
+
 ## API
 
 ### 发码API
