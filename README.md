@@ -31,13 +31,13 @@ Wangs知道之后非常开心,再大笑毛毡您连钱都不管了的同时顺�
 - 开始循环发码
 
 ```bash
-python3 SendCaptca.py -w <间隔时间(单位秒)> -ru <随机UA(True/False)>
+python3 SendCaptcha.py -w <间隔时间(单位秒)> -ru <随机UA(True/False)>
 ```
 
 - 发一个码
 
 ```bash
-python3 SendOneCaptca.py -p <手机号码>
+python3 SendOneCaptcha.py -p <手机号码>
 ```
 
 ## 在云端运行
