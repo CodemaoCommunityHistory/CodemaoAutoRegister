@@ -46,7 +46,7 @@ python3 SendOneCaptca.py -p <手机号码>
 
 在座的各位想必都玩过AI画图,所以对笔记本这东西(.ipynb)肯定很熟悉,直接拖入到Jupyter notebook里就可以使用了,有网络条件(指出国)的可以用Google Colab,在这里我就不多说了
 
-(https://colab.research.google.com/github/Wangs-official/CodemaoAutoRegister/blob/main/CodemaoAutoRegister.ipynb)[Open In Colab]
+[Open In Colab](https://colab.research.google.com/github/Wangs-official/CodemaoAutoRegister/blob/main/CodemaoAutoRegister.ipynb)
 
 ## API
 
