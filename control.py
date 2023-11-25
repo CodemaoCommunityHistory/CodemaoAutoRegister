@@ -47,5 +47,32 @@ def send_captcha_code(phone_code,random_ua):
                 logging.error('请求异常!返回状态码:' + str(r.status_code) + ',返回信息:' + r.text)
                 return False
 
-def test_captcha_code(phone_code):
-        pass
+def test_captcha_code(phone_code,password,ua):
+        api_url = 'https://api.codemao.cn/tiger/v3/web/accounts/register/phone/with-agreement'
+        test_captcha = random.randint(100000,999999)
+
+        post_data = {}
+        post_data.update({
+        "phone_number": phone_code,
+        "password": password,
+        "captcha": test_captcha,
+        "agreement_ids": [
+                12,
+                13
+        ],
+        "pid": "65edCTyg"
+        })
+        
+        api_header = {'Content-Type': 'application/json' , 'User-Agent' : ua}
+
+        r = requests.post(api_url, data = json.dumps(post_data) , headers = api_header)
+
+        if r.status_code == 403 :
+                logging.error('请求成功!不过验证码不对,返回信息:' + r.text + '\n本次验证码:' + str(test_captcha))
+                return True
+        elif r.status_code == 200:
+                logging.info('请求成功!已经成功注册!,返回信息:' + r.text + '\n密码:' + password)
+                return False
+        else:
+                logging.error('未预期的状态码!返回状态码:' + str(r.status_code) + ',返回信息:' + r.text)
+                return False

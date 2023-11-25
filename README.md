@@ -6,6 +6,10 @@
 
 ## 🛎 更新文档
 
+### 2023.11.25 (7)
+
+加入了穷举验证码 ^_^ 虽然不知道能不能真穷举出来,总之能用就行
+
 ### 2023.11.25 (6)
 
 发现了API风控的样子,返回信息从`{"rule":"DEFAULT","appid":"","ticket":"xxx"}(未风控)`变成了`{"rule":"TENCENT","appid":"xxx"}`
@@ -56,6 +60,14 @@ python3 SendCaptcha.py -w <间隔时间(单位秒)> -ru <随机UA(True/False)>
 python3 SendOneCaptcha.py -p <手机号码>
 ```
 
+- 开始穷举验证码
+
+```bash
+python3 TestCaptchaCode.py -p <手机号码> -w <等待时间(单位秒)>
+```
+
+> ⚠️ 请先使用`python3 SendOneCaptcha.py -p <手机号码>`命令发码!验证码有效期为10分钟,程序已限制运行时间为10分钟,请及时开始穷举验证码
+
 ## ☁️ 在云端运行
 
 因为一些原因我们必须隐藏自己的IP,云端是个不错的选择
@@ -93,6 +105,19 @@ python3 SendOneCaptcha.py -p <手机号码>
 |    captcha    | string |            验证码            |
 | agreement_ids |  list  |        默认`[12,13]`         |
 |      pid      | string | 大概是官网用于记录登录时所在平台用的,65edCTyg是社区的PID |
+
+## 🧠 性能
+
+实体机的CPU为:`2.7 GHz 四核Intel Core i7`
+
+测试网络环境: `中国电信4G`
+
+测试线程: `8线程` 间隔时间:`1秒`
+
+在网络正常且无波动的情况下,实际可运行次数为:4769次
+
+任何人的设备都不一样,所以我不确定所有人的设备都能运行到这个数量,可能会有波动,请以自己的设备为准
+
 
 ## 😱 免责声明
 
