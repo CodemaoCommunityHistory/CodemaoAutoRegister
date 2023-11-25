@@ -1,8 +1,8 @@
 # @author: Wangs_official
 # @LICENSE: MIT
 # Please read README.md when you start to use
-import logging
 
+import logging
 import control as c
 import argparse
 import time as t
@@ -48,6 +48,4 @@ while 1:
         run_f = run_f + 1
         logging.info('运行次数:' + str(run_f) + '\n')
     t.sleep(args.wait_time)
-
-logging.info('运行结束!')
 

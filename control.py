@@ -35,9 +35,17 @@ def send_captcha_code(phone_code,random_ua):
 
         r = requests.post(api_url, data = json.dumps(post_data) , headers = api_header)
 
+        if json.loads(r.text).get("rule") == "TENCENT" :
+                # 触发风控
+                logging.error('请求被风控!返回信息:' + r.text)
+                return False
+
         if r.status_code == 200 :
                 logging.info('请求成功!返回状态码:' + str(r.status_code) + ',返回信息:' + r.text)
                 return True
         else:
                 logging.error('请求异常!返回状态码:' + str(r.status_code) + ',返回信息:' + r.text)
                 return False
+
+def test_captcha_code(phone_code):
+        pass
